@@ -6,6 +6,7 @@ const routes = [
         path:'/',
         name:'layout',
         component:() => import('@/views/Layout/Layout.vue'),
+        meta:{noAuth:true},
         children:[
             {
                 path:'/content',
@@ -23,17 +24,20 @@ const routes = [
     {
         path:'/login',
         name:'login',
+        meta:{noAuth:false},
         component:() => import('@/views/User/Login.vue'),
     },
     {
         path:'/reg',
         name:'reg',
+        meta:{noAuth:false},
         component:() => import('@/views/User/Reg.vue'),
     },
 
     {
         path:'/:pathMatch(.*)*',
         name:'not fount',
+        meta:{noAuth:false},
         component:() => import('@/components/404.vue'),
     }
 ]
