@@ -1,7 +1,7 @@
 import axios from "axios";
 
 
-const instance = axios.create({
+const service = axios.create({
 
     baseURL:'http://127.0.0.1:8000/api',
 
@@ -12,23 +12,24 @@ const instance = axios.create({
     }
 })
 
-
-
-instance.interceptors.request.use((config) => {
-
+service.interceptors.request.use((config) => {
     return config
 }, (error) => {
+    console.log(error)
     return Promise.reject(error)
 })
 
 
-instance.interceptors.response.use((res) => {
+service.interceptors.response.use((res) => {
+
+    console.log(res.data)
+
     
     return res.data
 },(error) => {
-
+    console.log(error)
     return Promise.reject(error)
 })
 
 
-export default instance;
+export default service;

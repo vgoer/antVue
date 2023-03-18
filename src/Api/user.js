@@ -1,18 +1,26 @@
-import instance from "./request";
-
+import request from './request'
 
 // 登录请求数据
-// export const userLoginApi = (params) => instance.get('/user/login',params);
+// export const userLoginApi = (params) => request.get('/user/login',params);
 
 // 用户注册请求数据
-export const userRegApi = (params) => instance.post('/user/reg',params);
+export const userRegApi = (params) => request.get('/user/reg',params);
 
-
-// 这样写更优雅
+// 更好
 export const userLoginApi = (query) => {
-    instance({
+    request({
         url:'/user/login',
-        method:'post',
+        method:'get',
         params: query
     })
 }
+
+
+export const getBloglist = query => {
+    request({
+        url:'/blog/list',
+        method:'post',
+        params:query
+    })
+}
+

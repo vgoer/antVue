@@ -1,5 +1,4 @@
 <template>
-
 About   
 <IsDark></IsDark>
 
@@ -17,10 +16,12 @@ About
 import IsDark from '@/components/IsDark.vue';
 import { mainStore } from '@/store';
 import { userStore } from '@/store/user'
+import { onMounted } from 'vue';
 
 const store = mainStore()
 
 const user = userStore()
+
 
 </script>
 

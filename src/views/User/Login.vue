@@ -61,12 +61,12 @@ const formState = reactive({
 })
 
 // 登录
-const onFinish = async (values) => {
+const onFinish = async (value) => {
 
-    console.log('Success:', values);
+    console.log('Success:', value);
 
-    let res = await userLoginApi(values)
-    console.log(res)
+    let result = await userLoginApi(value)
+    console.log(result)
 
 
 }
