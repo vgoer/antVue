@@ -1,14 +1,14 @@
 import request from './request'
 
 // 登录请求数据
-// export const userLoginApi = (params) => request.get('/user/login',params);
+//export const userLoginApi = (params) => request.get('/user/login',params);
 
 // 用户注册请求数据
-export const userRegApi = (params) => request.get('/user/reg',params);
+// export const userRegApi = (params) => request.get('/user/reg',params);
 
 // 更好
 export const userLoginApi = (query) => {
-    request({
+    return request({
         url:'/user/login',
         method:'get',
         params: query
@@ -17,7 +17,7 @@ export const userLoginApi = (query) => {
 
 
 export const getBloglist = query => {
-    request({
+    return request({
         url:'/blog/list',
         method:'post',
         params:query

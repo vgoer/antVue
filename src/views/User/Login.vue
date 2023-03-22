@@ -51,6 +51,7 @@
 <script setup>
 import { reactive } from 'vue';
 import { userLoginApi } from '@/Api/user';
+import {message} from 'ant-design-vue'
 
 // 表单数据
 const formState = reactive({
@@ -67,7 +68,10 @@ const onFinish = async (value) => {
 
     let result = await userLoginApi(value)
     console.log(result)
-
+    if(result.code === 1){
+        message.success('This is a success message');
+    }
+    message.error('This is an error message');
 
 }
 const onFinishFailed = errorInfo => {

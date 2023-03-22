@@ -21,9 +21,9 @@ service.interceptors.request.use((config) => {
 
 
 service.interceptors.response.use((res) => {
-
-    console.log(res.data)
-
+     
+    // 打印
+    //console.log(res.data)
     
     return res.data
 },(error) => {
