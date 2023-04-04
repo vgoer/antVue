@@ -10,8 +10,12 @@ import router from './router'
 app.use(router)
 
 
-// antv
-// import 'ant-design-vue/dist/antd.dark.css'
+// element
+import 'element-plus/theme-chalk/dark/css-vars.css'
+
+
+//tw 
+import './index.css'
 
 // pinia
 import { createPinia } from 'pinia'

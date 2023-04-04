@@ -69,9 +69,9 @@ const onFinish = async (value) => {
     let result = await userLoginApi(value)
     console.log(result)
     if(result.code === 1){
-        message.success('This is a success message');
+        message.success(`欢迎你${result.data}`)
     }
-    message.error('This is an error message');
+    message.error('登录失败了！');
 
 }
 const onFinishFailed = errorInfo => {
