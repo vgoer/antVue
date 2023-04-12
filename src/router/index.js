@@ -5,18 +5,18 @@ const routes = [
     {
         path:'/',
         name:'layout',
-        component:() => import('@/views/Layout/Layout.vue'),
+        component:() => import('@/views/layout/layout.vue'),
         meta:{noAuth:true},
         children:[
             {
                 path:'/content',
                 name:'content',
-                component:() => import('@/views/Content/Content.vue'),
+                component:() => import('@/views/content/content.vue'),
             },
             {
                 path:'/about',
                 name:'about',
-                component:() => import('@/views/About/About.vue')
+                component:() => import('@/views/about/about.vue')
             }
         ],
     },
@@ -25,20 +25,20 @@ const routes = [
         path:'/login',
         name:'login',
         meta:{noAuth:false},
-        component:() => import('@/views/User/Login.vue'),
+        component:() => import('@/views/user/login.vue'),
     },
     {
         path:'/reg',
         name:'reg',
         meta:{noAuth:false},
-        component:() => import('@/views/User/Reg.vue'),
+        component:() => import('@/views/user/reg.vue'),
     },
 
     {
         path:'/:pathMatch(.*)*',
         name:'not fount',
         meta:{noAuth:false},
-        component:() => import('@/components/404.vue'),
+        component:() => import('@/components/NotFount/index.vue'),
     }
 ]
 
